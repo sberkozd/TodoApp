@@ -15,6 +15,10 @@ function HomeScreen({ tasks, setTasks }) {
     setLocalTasks(tasks);
   }, [tasks]);
 
+  useEffect(() => {
+    setTasks(localTasks);
+  }, [localTasks]);
+
   const handleStatusChange = (title) => {
     setLocalTasks((currentTasks) =>
       currentTasks.map((task) => {
@@ -34,7 +38,7 @@ function HomeScreen({ tasks, setTasks }) {
     <View style={styles.container}>
       <StatusBar style="auto" />
       <Tasks
-        tasks={tasks}
+        tasks={localTasks}
         setTasks={setTasks}
         onStatusChange={handleStatusChange}
         onTaskRemoval={handleTaskRemoval}
