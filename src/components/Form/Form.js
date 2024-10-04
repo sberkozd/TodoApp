@@ -37,7 +37,7 @@ export default function Form(props) {
           <Text style={styles.warningText}>{errorMessage}</Text>
         </View>
       )}
-      <Text style={styles.descriptionText}>Description:</Text>
+      <Text style={styles.descriptionText}>Title:</Text>
       <TextInput
         style={styles.input}
         maxLength={150}
@@ -45,15 +45,6 @@ export default function Form(props) {
         defaultValue={taskDescription}
       />
       <View>
-        <View style={styles.row}>
-          <Text style={styles.completedText}>Done: </Text>
-          <Switch
-            trackColor={styles.switch.trackColor}
-            thumbColor={styles.switch.thumbColor}
-            value={taskDone}
-            onValueChange={handleStatusChange}
-          />
-        </View>
         <TouchableOpacity style={styles.button} onPress={handleAddPress}>
           <Text style={styles.buttonText}>Add Task</Text>
         </TouchableOpacity>
